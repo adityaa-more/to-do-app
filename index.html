@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>To Do App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body class="theme-light">
+    <div class="background-img"></div>
+
+    <div class="container">
+      <div class="header">
+        <div class="title">TODO</div>
+        <div onclick="themeChanger()" class="theme">
+          <span>Light</span>
+        </div>
+      </div>
+
+      <div class="new-todo">
+        <div class="check">
+          <div class="check-mark"></div>
+        </div>
+        <div class="new-todo-input">
+          <form onsubmit="addItem(event)">
+            <input
+              id="todo-input"
+              type="text"
+              placeholder="Create a new todo"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div class="todo-items-wrapper">
+        <div class="todo-items">
+          <div class="todo-item">
+            <div class="check">
+              <div class="check-mark">
+                <img src="./images/icon-check.svg" />
+              </div>
+            </div>
+            <div class="todo-text">Todo items not found</div>
+          </div>
+        </div>
+        <div class="todo-items-info">
+          <div class="items-left">
+            <span id="items-left">0</span> items left
+          </div>
+          <div class="items-statuses">
+            <span class="sort-by active">All</span>
+            <span class="sort-by">Active</span>
+            <span class="sort-by">Completed</span>
+          </div>
+          <div class="items-clear">
+            <span>Clear Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
